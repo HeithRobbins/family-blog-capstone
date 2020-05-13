@@ -17,6 +17,8 @@ app.use(methodOverride('_method'))
 
 
 app.get('/', async (req, res) => {
+    // queries database, responds with the json
+    // Render ^ to react component
     const articles = await Article.find().sort({
         createdAt: 'desc' })
     res.render('articles/index', { articles: articles })
