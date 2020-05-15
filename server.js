@@ -11,6 +11,10 @@ const app = express()
 
 const MONGODB_URI = process.env.MONGODB_URI
  
+// mongoose.connect('mongodb://localhost:27017/blog', {
+//     useNewUrlParser: true, useUnifiedTopology: true
+// })
+
 
 mongoose.connect(
     MONGODB_URI,
