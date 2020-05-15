@@ -6,7 +6,7 @@ const methodOverride = require('method-override')
 const cors = require("cors")
 const app = express()
 
-const MONGODB_URI = proess.env.NODE_ENV
+const MONGODB_URI = process.env.NODE_ENV
 
 mongoose.connect(
     MONGODB_URI,
