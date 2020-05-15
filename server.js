@@ -6,10 +6,19 @@ const methodOverride = require('method-override')
 const cors = require("cors")
 const app = express()
 
+const MONGODB_URI = proess.env.NODE_ENV
 
-mongoose.connect('mongodb://localhost/blog', { 
-    useNewUrlParser: true,  useUnifiedTopology: true 
-})
+mongoose.connect(
+    MONGODB_URI,
+    { useNewUrlParser: true,  useUnifiedTopology: true },
+    (err) => {
+        if (!err) {
+            console.log("Connected to familyblog")
+        } else {
+            console.log("Error connecting: ", err)
+        }
+    }
+)
 
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: false }))
