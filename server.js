@@ -7,17 +7,13 @@ const methodOverride = require('method-override')
 const cors = require("cors")
 
 const app = express()
-
-
-const MONGODB_URI = process.env.MONGODB_URI
  
 // mongoose.connect('mongodb://localhost:27017/blog', {
 //     useNewUrlParser: true, useUnifiedTopology: true
 // })
 
-
 mongoose.connect(
-    MONGODB_URI,
+    process.env.MONGODB_URI,
     { useNewUrlParser: true,  useUnifiedTopology: true, useCreateIndex: true },
     (err) => {
         if (!err) {
@@ -43,4 +39,4 @@ app.get('/', async (req, res) => {
 
 app.use(cors())
 app.use('/articles', articleRouter)
-app.listen(5000)
+app.listen(process.env.PORT || 5000)
