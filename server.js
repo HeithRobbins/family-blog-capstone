@@ -1,12 +1,16 @@
+require("dotenv").config({ path: 'ENV_FILENAME' })
 const express = require('express')
 const mongoose = require('mongoose')
 const Article = require('./models/article')
 const articleRouter = require('./routes/articles')
 const methodOverride = require('method-override')
 const cors = require("cors")
+
 const app = express()
 
-const MONGODB_URI = env.NODE_ENV
+
+const MONGODB_URI = env.NODE_ENV 
+ 
 
 mongoose.connect(
     MONGODB_URI,
