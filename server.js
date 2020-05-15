@@ -9,7 +9,7 @@ const cors = require("cors")
 const app = express()
 
 
-process.env.MONGODB_URI
+const MONGODB_URI = process.env.MONGODB_URI
  
 
 mongoose.connect(
